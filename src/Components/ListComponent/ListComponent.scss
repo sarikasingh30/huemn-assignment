@@ -1,0 +1,36 @@
+.listC{
+    width:25%;
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid grey;
+    align-items: center;
+    justify-content: space-between;
+    overflow-y: scroll;
+  scroll-behavior: smooth;
+    .Lbox{
+        width:70%;
+        margin: auto;
+        padding:2%;
+        margin-top:4%;
+        margin-bottom: 4%;
+        
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;   
+       .clicked{
+        border:2px solid red;
+       }
+        .ImgBox{
+            width:60%;
+            margin:auto;
+            img{
+                width:100%;
+                margin: auto;
+            }
+        }
+    }
+}
+
