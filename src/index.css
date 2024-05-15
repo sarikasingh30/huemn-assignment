@@ -21,12 +21,13 @@ li {
 }
 li:hover {
   background-color: #333;
+  color: white;
 }
 
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: #F7A9B9;
   position: sticky;
 }
@@ -86,9 +87,10 @@ li:hover {
   background-color: indianred;
 }
 .navbar .links-parent > li .header label {
-  color: #000000;
+  color: white;
   height: 100%;
-  width: 100%;
+  width: 90%;
+  margin: auto;
   cursor: pointer;
   padding: 1rem 2rem;
   position: relative;
@@ -164,14 +166,36 @@ li:hover {
   }
   .navbar .links-parent > li .links-child > li:hover {
     background-color: #333;
+    color: white;
   }
   .navbar .links-parent > li .links-child > li a {
     text-align: left;
   }
 }
 #footer {
-  width: 100%;
+  width: 80%;
   background: #F7A9B9;
+  margin: auto;
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: end;
+}
+#footer .xob {
+  width: 40px;
+  height: 40px;
+}
+
+.load {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.load .svgk {
+  margin: auto;
 }
 
 .mainC {
@@ -226,7 +250,6 @@ li:hover {
 }
 .detailC h2 {
   color: rgb(117, 5, 24);
-  text-align: center;
 }
 .detailC .ImgBox {
   width: 70%;
@@ -237,6 +260,12 @@ li:hover {
 .detailC .ImgBox img {
   width: 100%;
   height: 100%;
+}
+.detailC .likeNCat {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 .detailC h4 {
   color: #0b0142;
@@ -257,6 +286,15 @@ li:hover {
 .detailC .para {
   width: 90%;
   margin: auto;
+}
+.detailC .NoBox {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.detailC .NoBox .NoDishChoosed {
+  padding: 2%;
 }
 
 body {

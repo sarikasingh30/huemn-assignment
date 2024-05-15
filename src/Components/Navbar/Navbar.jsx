@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="title">
-        <a href="index.html">Brand</a>
+        <a href="/">Brand</a>
       </div>
       <div className="burger">
         <span></span>
@@ -12,21 +13,22 @@ export const Navbar = () => {
         <span></span>
       </div>
       <ul className="links-parent">
-        <li>
+        {/* <li>
           <div className="header">
-            <label for="select1">Services</label>
+            <label>Services</label>
           </div>
         </li>
         <li>
           <div className="header">
-            <label for="select2">Contact</label>
+            <label>Contact</label>
           </div>
-        </li>
-        <li>
+        </li> */}
+        <Link to="/wishlist"><li>
           <div className="header">
-            <label for="select3">Help</label>
+            <label>WishList</label>
           </div>
         </li>
+        </Link>
       </ul>
     </nav>
   );
