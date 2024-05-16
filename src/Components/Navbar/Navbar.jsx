@@ -5,7 +5,7 @@ export const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="title">
-        <a href="/">Brand</a>
+        <a href="/">KHAANA APP</a>
       </div>
       <div className="burger">
         <span></span>
