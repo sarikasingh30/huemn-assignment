@@ -8,4 +8,37 @@ body{
     margin: 0;
     padding: 0;
 }
+.wGridBox{
+    width:100%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+
+
+    .grid{
+        width:95%;
+        margin:auto;
+        display: grid;
+        padding:5%;
+        grid-template-columns: repeat(4,1fr);
+        gap:2% 2%;
+        .grid-div{
+            width:90%;
+            margin:auto;
+            display:flex;
+            flex-direction:column; 
+            justify-content: center;
+            align-items:"center";
+            text-align:"center";
+            div{
+                padding: 2%;
+            img{
+               width: 100px;
+               height: 100px;
+               margin-left: auto;
+            //    margin:auto;
+            }    
+            }
+        }
+    }
+}
 

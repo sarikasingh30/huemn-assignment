@@ -1,32 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { getLocalData } from "../Utils/localStorage";
 
 export const WishList = () => {
-  let [data, setData] = useState(getLocalData("wishList") || []);
+  let data=getLocalData("wishList") || []
 
   return (
-    <div>
-      <h2 style={{textAlign:"center"}}>WISHLIST</h2>
-      <table style={{display:"flex", flexDirection:"column", justifyContent:"space-around", alignItems:"center", width:"90%", margin:"auto", marginTop:"3%"}}>
-        <tr style={{display:"flex", flexDirection:"row", justifyContent:"space-around", alignItems:"center", width:"100%", margin:"auto"}}>
-          <th>Dish</th>
-          <th>Image</th>
-          <th>Category</th>
-          <th>Area</th>
-          <th>Tags</th>
-        </tr>
-      </table>
-      <tbody style={{display:"flex", flexDirection:"column", justifyContent:"space-around", alignItems:"center", width:"100%", margin:"auto"}}>
+    <div className="wGridBox">
+      <h2 style={{textAlign:"center", marginTop:"3%"}}>WISHLIST</h2>
+    <div className="grid">
         {data?.map((el)=>{
-            return <tr key={el?.idMeal} style={{display:"flex", justifyContent:"space-around", alignItems:"center", width:"100%", margin:"auto"}}>
-                <td>{el?.strMeal}</td>
-                <td><img style={{width:"80px", height:"80px"}} src={el.strMealThumb} alt="dm"/></td>
-                <td>{el.strCategory}</td>
-                <td>{el.strArea}</td>
-                <td>{el.strTags}</td>
-            </tr>
+            return <div key={el?.idMeal} className="grid-div">
+                <h4>{el?.strMeal}</h4>
+                <div className="imgHolder"><img src={el.strMealThumb} alt="dm"/></div>
+                <h3>{el.strCategory}</h3>
+                <h6>{el.strArea}</h6>
+                <p>{el.strTags}</p>
+            </div>
         })}
-      </tbody>
+      </div>
     </div>
   );
 };
