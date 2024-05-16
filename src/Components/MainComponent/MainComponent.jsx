@@ -11,7 +11,9 @@ import axios from "axios";
 
 export const MainComponent = () => {
   const dispatch = useDispatch();
-  const { list, isLoading, isError } = useSelector((store) => store);
+  const list = useSelector((store) => store.list);
+  const isLoading = useSelector((store) => store.isLoading);
+  const isError = useSelector((store) => store.isError);
   const [SData, setSData] = useState({});
   
 
