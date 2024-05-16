@@ -25,7 +25,7 @@ export const Navbar = () => {
         </li> */}
         <Link to="/wishlist"><li>
           <div className="header">
-            <label>WishList</label>
+            <label>WISHLIST</label>
           </div>
         </li>
         </Link>
