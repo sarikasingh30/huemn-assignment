@@ -1,180 +1,31 @@
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  display: block;
-  color: #000000;
-  text-decoration: none;
-  width: 100%;
-  white-space: nowrap;
-  text-align: center;
-}
-
-li {
-  list-style: none;
-  width: 100%;
-  cursor: pointer;
-  transition-duration: 400ms;
-}
-li:hover {
-  background-color: #333;
-  color: white;
-}
-
 .navbar {
+  background-color: #333;
+  color: #fff;
   display: flex;
-  align-items: center;
   justify-content: space-around;
-  background-color: #F7A9B9;
-  position: sticky;
-}
-.navbar .title {
-  padding: 1rem;
-  font-size: 1.5rem;
-  color: #000000;
-}
-.navbar .burger {
-  position: absolute;
-  width: 20px;
-  height: 15px;
-  display: none;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.25rem;
-  inset: 1.5rem 1rem auto auto;
-  cursor: pointer;
-}
-.navbar .burger:hover span:nth-child(2) {
-  width: 100%;
-}
-.navbar .burger span {
-  width: 100%;
-  height: 0.25rem;
-  background-color: #000000;
-  border-radius: 0.5rem;
-}
-.navbar .burger span:nth-child(2) {
-  width: 70%;
-  align-self: flex-end;
-  transition-duration: 400ms;
-}
-.navbar .links-parent {
-  display: flex;
   align-items: center;
 }
-.navbar .links-parent > li {
-  padding: 0 0;
-  position: relative;
-  z-index: 2;
-}
-.navbar .links-parent > li:has(.header input:checked) .links-child {
-  max-height: 12rem;
-}
-.navbar .links-parent > li .header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.navbar .links-parent > li .header input[type=checkbox] {
-  appearance: none;
-}
-.navbar .links-parent > li .header input[type=checkbox]:checked + label::after {
-  transform: translateY(-40%) rotate(45deg);
-  background-color: indianred;
-}
-.navbar .links-parent > li .header label {
-  color: white;
-  height: 100%;
-  width: 90%;
-  margin: auto;
-  cursor: pointer;
-  padding: 1rem 2rem;
-  position: relative;
-  transition-duration: 400ms;
-}
-.navbar .links-parent > li .links-child {
-  position: absolute;
-  inset: 100% 0 auto auto;
-  width: 100%;
-  background-color: #F7A9B9;
-  z-index: 1;
-  transition: max-height 400ms;
-  max-height: 0;
-  overflow: hidden;
-}
-.navbar .links-parent > li .links-child > li {
-  padding: 1rem 0;
-  position: relative;
-}
-.navbar .links-parent > li .links-child > li a {
-  font-size: 0.75rem;
-}
-.navbar .links-parent > li .links-child > li:not(:last-child):after {
-  width: 100%;
-  height: 1px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  content: "";
-  background-color: #000000;
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+  }
 }
 
-@media (max-width: 767px) {
-  .navbar {
-    flex-direction: column;
-    position: relative;
-    z-index: 4;
-  }
-  .navbar:has(.links-parent:hover) .burger span:nth-child(2), .navbar:has(.links-parent > li .links-child:hover) .burger span:nth-child(2) {
-    width: 100%;
-  }
-  .navbar .title {
-    align-self: flex-start;
-    z-index: 3;
-  }
-  .navbar .burger {
-    z-index: 3;
-    display: flex;
-  }
-  .navbar .burger:hover + .links-parent {
-    max-height: 100rem;
-  }
-  .navbar .links-parent {
-    background-color: #F7A9B9;
-    max-height: 0;
-    overflow: hidden;
-    flex-direction: column;
-    width: 100%;
-    transition: all 400ms ease 400ms;
-  }
-  .navbar .links-parent:hover {
-    max-height: 100rem;
-  }
-  .navbar .links-parent > li .header label::after {
-    z-index: 1;
-  }
-  .navbar .links-parent > li .links-child {
-    position: relative;
-  }
-  .navbar .links-parent > li .links-child > li {
-    padding: 0.5rem;
-    background-color: black;
-  }
-  .navbar .links-parent > li .links-child > li:hover {
-    background-color: #333;
-    color: white;
-  }
-  .navbar .links-parent > li .links-child > li a {
-    text-align: left;
-  }
+.navbar a {
+  color: inherit;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
 }
+
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 #footer {
   width: 80%;
-  background: #F7A9B9;
+  background: #333;
   margin: auto;
   height: 10vh;
   display: flex;
@@ -274,8 +125,8 @@ li:hover {
   padding: 3px 3px 3px 3px;
 }
 .detailC .yumm {
-  width: 100px;
-  height: 100px;
+  width: 20%;
+  height: 20%;
   border-radius: 50%;
 }
 .detailC .yumm img {
@@ -300,6 +151,7 @@ li:hover {
 body {
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
 .wGridBox {
@@ -323,14 +175,17 @@ body {
   justify-content: center;
   align-items: "center";
   text-align: "center";
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
-.wGridBox .grid .grid-div div {
-  padding: 2%;
-}
-.wGridBox .grid .grid-div div img {
+.wGridBox .grid .grid-div div .imgHolder {
   width: 100px;
   height: 100px;
-  margin-left: auto;
+  margin: auto;
+}
+.wGridBox .grid .grid-div .but {
+  border: none;
+  background: #333;
+  color: white;
 }
 
 /*# sourceMappingURL=index.css.map */

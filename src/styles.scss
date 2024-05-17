@@ -7,6 +7,7 @@
 body{
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 .wGridBox{
     width:100%;
@@ -29,15 +30,23 @@ body{
             justify-content: center;
             align-items:"center";
             text-align:"center";
+            box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
             div{
-                padding: 2%;
-            img{
-               width: 100px;
-               height: 100px;
-               margin-left: auto;
-            //    margin:auto;
-            }    
+                // padding: 2%;
+                
+                .imgHolder{
+                    width:100px;
+                    height: 100px;
+                    margin: auto;
+                 }    
+               
             }
+            .but{
+                border:none;
+                background: #333;
+                color:white;
+
+               }
         }
     }
 }

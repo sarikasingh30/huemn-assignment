@@ -1,210 +1,38 @@
-$light: #000000;
-$dark: #F7A9B9;
-$dark-o: #333;
-$colorW:white;
-// ------------------------
-$dur: 400ms;
-// ------------------------
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+$primary-color: #333;
+$secondary-color: #fff;
+$font-family: sans-serif;
+
+// Mixin for responsive media queries
+@mixin respond($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
 }
 
-a {
-  display: block;
-  color: $light;
-  text-decoration: none;
-  width: 100%;
-  white-space: nowrap;
-  text-align: center;
-}
-li {
-  list-style: none;
-  width: 100%;
-  cursor: pointer;
-  transition-duration: $dur;
-  &:hover {
-    background-color: $dark-o;
-    color: $colorW;
-  }
-}
-// ------------------------
-@mixin plus($dimension) {
-  width: $dimension;
-  height: $dimension;
-  clip-path: polygon(
-    40% 0%,
-    60% 0%,
-    60% 40%,
-    100% 40%,
-    100% 60%,
-    60% 60%,
-    60% 100%,
-    40% 100%,
-    40% 60%,
-    0% 60%,
-    0% 40%,
-    40% 40%
-  );
-}
-// ------------------------
 .navbar {
+  background-color: $primary-color;
+  color: $secondary-color;
   display: flex;
+  justify-content:space-around;
   align-items: center;
-  justify-content: space-around;
-  background-color: $dark;
-  position:sticky;
-  .title {
-    padding: 1rem;
-    font-size: 1.5rem;
-    color: $light;
-  }
-  .burger {
-    position: absolute;
-    width: 20px;
-    height: 15px;
-    display: none;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.25rem;
-    inset: 1.5rem 1rem auto auto;
-    cursor: pointer;
-    &:hover {
-      span:nth-child(2) {
-        width: 100%;
-      }
-    }
-    span {
-      width: 100%;
-      height: 0.25rem;
-      background-color: $light;
-      border-radius: 0.5rem;
-      &:nth-child(2) {
-        width: 70%;
-        align-self: flex-end;
-        transition-duration: $dur;
-      }
-    }
-  }
-  .links-parent {
-    display: flex;
-    align-items: center;
-    > li {
-      padding: 0 0;
-      position: relative;
-      z-index: 2;
-      &:has(.header input:checked) .links-child {
-        max-height: 12rem;
-      }
-      .header {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        input[type="checkbox"] {
-          appearance: none;
-        }
-        input[type="checkbox"]:checked + label::after {
-          transform: translateY(-40%) rotate(45deg);
-          background-color: indianred;
-        }
-        label {
-          color: $colorW;
-          height: 100%;
-          width: 90%;
-          margin: auto;
-          cursor: pointer;
-          padding: 1rem 2rem;
-          position: relative;
-          transition-duration: $dur;
-          
-        }
-      }
-      .links-child {
-        position: absolute;
-        inset: 100% 0 auto auto;
-        width: 100%;
-        background-color: $dark;
-        z-index: 1;
-        // ------
-        transition: max-height $dur;
-        max-height: 0;
-        overflow: hidden;
-        // ------
-        > li {
-          padding: 1rem 0;
-          position: relative;
-          a {
-            font-size: 0.75rem;
-          }
-          &:not(:last-child):after {
-            width: 100%;
-            height: 1px;
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            content: "";
-            background-color: $light;
-          }
-        }
-      }
-    }
+
+  // Responsive behavior
+  @include respond(768px) {
+    flex-wrap: wrap;
   }
 }
-@media (max-width: 767px) {
-  .navbar {
-    flex-direction: column;
-    position: relative;
-    z-index: 4;
-    &:has(.links-parent:hover) .burger span:nth-child(2),
-    &:has(.links-parent > li .links-child:hover) .burger span:nth-child(2) {
-      width: 100%;
-    }
-    .title {
-      align-self: flex-start;
-      z-index: 3;
-    }
-    .burger {
-      z-index: 3;
-      display: flex;
-      &:hover + .links-parent {
-        max-height: 100rem;
-      }
-    }
-    .links-parent {
-      background-color: $dark;
-      max-height: 0;
-      overflow: hidden;
-      flex-direction: column;
-      width: 100%;
-      transition: all $dur ease $dur;
-      &:hover {
-        max-height: 100rem;
-      }
-      > li {
-        .header {
-          label {
-            &::after {
-              z-index: 1;
-            }
-          }
-        }
-        .links-child {
-          position: relative;
-          > li {
-            padding: 0.5rem;
-            background-color: black;
-            &:hover {
-              background-color: $dark-o;
-              color: $colorW;
-            }
-            a {
-              text-align: left;
-            }
-          }
-        }
-      }
-    }
-  }
+
+.navbar a {
+  color: inherit;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
 }
+
+
+// Optional: Logo styling
+.navbar .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+

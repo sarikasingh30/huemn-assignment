@@ -14,7 +14,7 @@ export const Footer = () => {
     { scope: fBox }
   );
   return (
-    <div style={{backgroundColor:"#F7A9B9"}}>
+    <div style={{backgroundColor:"#333"}}>
       <div id="footer" ref={fBox}>
         <div className="xob" style={{backgroundColor:"#A87676"}}></div>
         <div className="xob" style={{backgroundColor:"#FFD0D0"}}></div>
